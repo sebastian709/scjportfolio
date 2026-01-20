@@ -36,7 +36,7 @@ const Contact = () => {
 
             <a href="https://wa.me/639977024547" target="_blank" rel="noreferrer">
               <i className="ri-whatsapp-line"></i>
-              {/* +63 9977024547 */} jabson
+              {/* +63 9977024547 */} + 639977024547
             </a>
           </div>
         </div>
