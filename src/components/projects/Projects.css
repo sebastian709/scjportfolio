@@ -1,0 +1,144 @@
+.projects {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* HEADER */
+.projects-header {
+  margin-bottom: 50px;
+}
+
+.projects-header h2 {
+  font-size: 32px;
+  position: relative;
+}
+
+.projects-header h2::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #01ff7c;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+.projects-header p {
+  margin-top: 20px;
+  color: #b5b5b5;
+  max-width: 500px;
+}
+
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* CARD */
+.project-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #616362;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(1, 255, 124, 0.5);
+}
+
+/* THUMBNAIL */
+.project-thumb {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* BODY */
+.project-body {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.project-body h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.project-body p {
+  font-size: 14px;
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* TECH STACK */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tech span {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(1, 255, 124, 0.08);
+  border: 1px solid rgba(1, 255, 124, 0.4);
+  color: #01ff7c;
+}
+
+/* LINKS */
+.project-links {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  gap: 16px;
+}
+
+.project-links a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: #01ff7c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .projects-header h2 {
+    font-size: 26px;
+  }
+}
+
+/* BUTTON CENTER ONLY */
+.projects-btn {
+  /* margin-top: 40px; */
+  display: flex;
+  justify-content: center; /* center horizontally */
+}

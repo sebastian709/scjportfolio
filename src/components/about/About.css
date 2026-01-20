@@ -1,0 +1,129 @@
+.about {
+  padding: 90px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+}
+
+/* HEADER */
+.about-header {
+  margin-bottom: 40px;
+}
+
+.about h2 {
+  font-size: 32px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.about h2::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: #01ff7c;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+.about-subtitle {
+  font-size: 14px;
+  color: #8f8f8f;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* CONTENT */
+.about-content {
+  max-width: 850px;
+}
+
+.about p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #cfcfcf;
+  font-size: 16px;
+  
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aboutFade 0.8s ease forwards;
+}
+
+.about p:nth-of-type(1) { animation-delay: 0.2s; }
+.about p:nth-of-type(2) { animation-delay: 0.4s; }
+.about p:nth-of-type(3) { animation-delay: 0.6s; }
+
+@keyframes aboutFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TECH SECTION */
+.tech-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  
+}
+
+.tech-title {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+/* GROUPS */
+.tech-groups {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  /* max-width: 1000px; */
+}
+
+/* CATEGORY */
+.tech-group-title {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* GRID */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+/* CARD */
+.tech-card {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #01ff7c;
+  background: rgba(1, 255, 124, 0.05);
+  border: 1px solid rgba(1, 255, 124, 0.25);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  background: #01ff7c;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tech-groups {
+    grid-template-columns: 1fr;
+  }
+}
+

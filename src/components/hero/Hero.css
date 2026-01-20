@@ -1,0 +1,134 @@
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: calc(100vh - 80px);
+  padding: 40px 40px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  /* border-bottom: #01ff7c 1px solid; */
+}
+
+
+
+/* LEFT */
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-text h2 {
+  font-size: 22px;
+  color: #01ff7c;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-text p {
+  max-width: 480px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+
+
+/* RIGHT */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.hero-image img {
+  width: 500px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+  opacity: 0.1;
+  transform: translateY(-20px) scale(0.95);
+  animation: imageFade 1s forwards 1s, float-random 6s ease-in-out infinite;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    min-height: auto;
+    margin: 100px auto 0;
+    padding: 0 20px 60px;
+  }
+
+  .hero-text p {
+    margin: 0 auto 30px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image img {
+    width: 260px;
+  }
+}
+
+/* TEXT ANIMATION */
+.hero-text h1,
+.hero-text h2,
+.hero-text p,
+.hero-buttons {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards;
+}
+
+/* Staggered delay */
+.hero-text h1 { animation-delay: 0.2s; }
+.hero-text h2 { animation-delay: 0.4s; }
+.hero-text p  { animation-delay: 0.6s; }
+.hero-buttons { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* IMAGE FADE */
+@keyframes imageFade {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* RANDOM FLOAT EFFECT */
+@keyframes float-random {
+  0%   { transform: translate(0px, 0px); }
+  20%  { transform: translate(-5px, 8px); }
+  40%  { transform: translate(6px, -6px); }
+  60%  { transform: translate(-4px, 4px); }
+  80%  { transform: translate(3px, -5px); }
+  100% { transform: translate(0px, 0px); }
+}
