@@ -102,7 +102,7 @@ const Projects = () => {
 
                 {/* LINKS */}
                 <div className="project-links">
-                  {project.links.github && (
+                  {/* {project.links.github && (
                     <a
                       href={project.links.github}
                       target="_blank"
@@ -110,7 +110,7 @@ const Projects = () => {
                     >
                       GitHub
                     </a>
-                  )}
+                  )} */}
                   {project.links.live && (
                     <a
                       href={project.links.live}
