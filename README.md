@@ -41,12 +41,19 @@ Welcome to my personal portfolio! This project showcases my work, skills, and jo
 
 ## 📂 Project Structure
 src/
+
 ├─ hero/ # Hero section
+
 ├─ about/ # About & Tech Stack
+
 ├─ projects/ # Projects section
+
 ├─ contact/ # Contact form
+
 ├─ footer/ # Footer & social links
+
 ├─ assets/ # Images & icons
+
 └─ App.jsx # Main app component
 
 
