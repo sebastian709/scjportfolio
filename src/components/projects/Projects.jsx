@@ -34,7 +34,7 @@ const projectsData = [
     ],
     links: {
       github: "https://github.com/yourusername/portfolio",
-      live: "https://yourportfolio.com",
+      live: "https://ranserenity.com/",
     },
   },
   {
@@ -46,7 +46,7 @@ const projectsData = [
     techStack: ["Wordpress", "Elementor", "Adobe Photoshop", "Responsive Web Design"],
     links: {
       github: "https://github.com/yourusername/system",
-      live: "#",
+      live: "https://guamcoralreef.com/",
     },
   },
   {
