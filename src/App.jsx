@@ -5,7 +5,7 @@ import About from "./components/about/About";
 // import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
-import ScrollTop from './components/scrollTop/scrollTop';
+import ScrollTop from './components/scrollTop/ScrollTop';
 import Footer from './components/footer/Footer';
 import './App.css'
 
