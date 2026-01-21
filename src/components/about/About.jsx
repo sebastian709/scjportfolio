@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import Experience from "../experience/Experience";
 
 const techStack = {
   Frontend: [
@@ -54,6 +55,8 @@ const About = () => {
             grow into a solid developer and build a sustainable freelance career.
           </p>
         </div>
+
+        <Experience />
 
         {/* TECH STACK */}
         <div className="tech-section">

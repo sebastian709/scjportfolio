@@ -1,0 +1,142 @@
+.experience {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-container {
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+}
+
+/* SECTION TITLE */
+.experience h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.experience h2::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #01ff7c;
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 49px;
+  top: 10px;
+  width: 2px;
+  height: 100%;
+  background: rgba(1, 255, 124, 0.3);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* DOT */
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  background: #01ff7c;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(1, 255, 124, 0.6);
+}
+
+/* CONTENT */
+.timeline-content {
+  padding-left: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.timeline-item:nth-child(1) .timeline-content {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(2) .timeline-content {
+  animation-delay: 0.4s;
+}
+.timeline-item:nth-child(3) .timeline-content {
+  animation-delay: 0.6s;
+}
+
+.timeline-date {
+  font-size: 13px;
+  color: #01ff7c;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.timeline-content h4 {
+  font-size: 15px;
+  color: #cfcfcf;
+  margin-bottom: 12px;
+}
+
+/* LIST */
+.timeline-content ul {
+  padding-left: 18px;
+}
+
+.timeline-content li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .experience h2 {
+    font-size: 26px;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-content {
+    padding-left: 30px;
+  }
+
+  .timeline::before {
+    left: 28px;
+    top: 10px;
+  }
+}
