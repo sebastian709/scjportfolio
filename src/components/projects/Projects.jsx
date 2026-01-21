@@ -58,7 +58,7 @@ const projectsData = [
     techStack: ["Bootstrap (Framework)", "Html", "CSS"],
     links: {
       github: "https://github.com/yourusername/api-app",
-      live: "#",
+      live: "https://sebastian709.github.io/screen-wide-printing/",
     },
   },
 ];
