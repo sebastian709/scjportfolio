@@ -114,6 +114,14 @@
   align-self: flex-start;
 }
 
+.contact-confirmation {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #01ff7c; /* success color */
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .contact-container {
