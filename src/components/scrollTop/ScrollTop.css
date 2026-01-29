@@ -1,6 +1,6 @@
 .scroll-top {
   position: fixed;
-  bottom: 40px;
+  bottom: 60px;
   right: 40px;
   background-color: black;
   color: #fff;
@@ -10,7 +10,7 @@
   height: 50px;
   font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,4 +21,11 @@
 .scroll-top:hover {
   transform: scale(1.1);
   background-color: #00e065;
+}
+
+@media (max-width: 768px) {
+  .scroll-top {
+    bottom: 80px;
+    right: 20px;
+  }
 }
