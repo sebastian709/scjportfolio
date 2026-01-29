@@ -1,44 +1,98 @@
-.navbar {
+/* ===== Left Vertical Floating Sidebar ===== */
+.floating-navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.25);
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top: 1px solid #01ff7c;
+  border-right: 1px solid #01ff7c;
+  border-bottom: 1px solid #01ff7c;
+  border-left: none;
+  padding: 20px 8px;
+  width: 80px; /* compact width */
   z-index: 1000;
-  color:#01ff7c;
-  border-bottom: 1px solid #185837;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.nav-links {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+/* List inside sidebar */
+.floating-links {
   list-style: none;
-  margin: 0;
   padding: 0;
-  margin-right: 100px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.nav-links a {
-  text-decoration: none;
+.floating-links li {
+  width: 100%;
+}
+
+/* Links style */
+.floating-links a {
+  display: block;
+  padding: 10px 12px;
   color: #01ff7c;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #fff;
+/* Hover effect */
+.floating-links a:hover {
+  background: #01ff7c;
+  color: #0d1117;
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(1, 255, 124, 0.5);
 }
 
-.logo img {
-  height: 40px;
-  width: auto;
-  cursor: pointer;
+/* Sidebar expand on hover */
+.floating-navbar:hover {
+  width: 120px;
+}
+
+/* ===== Mobile / Small screens ===== */
+@media (max-width: 768px) {
+  .floating-navbar {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    width: auto;
+    border-radius: 16px 16px 0 0;
+    border-left: 1px solid #01ff7c;
+    border-right: 1px solid #01ff7c;
+    border-top: 1px solid #01ff7c;
+    border-bottom: none;
+    padding: 8px 16px;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .floating-links {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .floating-links a {
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  .floating-navbar:hover {
+    width: auto; /* no expand on hover */
+  }
 }

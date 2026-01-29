@@ -1,0 +1,71 @@
+/* TECH SECTION */
+.tech-section {
+  /* margin-top: 60px; */
+  padding: 20px 0;
+  color: #ffffff;
+}
+
+.tech-title {
+  font-size: 32px;
+  margin-bottom: 50px;
+  position: relative;
+  color:#01ff7c;
+}
+
+.tech-title::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #01ff7c;
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  border-radius: 2px; /* optional, para rounded edges */
+}
+
+
+/* GROUPS */
+.tech-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+/* CATEGORY */
+.tech-group-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* GRID */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* CARD */
+.tech-card {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #01ff7c;
+  border: 1px solid rgba(1, 255, 124, 0.3);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tech-card:hover {
+  background: #01ff7c;
+  color: #0b0f14;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tech-groups {
+    grid-template-columns: 1fr;
+  }
+}
