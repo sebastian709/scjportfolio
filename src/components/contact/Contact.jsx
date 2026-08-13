@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import "./Contact.css";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import './Contact.css';
 
 const Contact = () => {
   const form = useRef();
-  const [confirmation, setConfirmation] = useState(""); // state for confirmation message
+  const [confirmation, setConfirmation] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,78 +17,78 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
-        (result) => {
+        () => {
           form.current.reset();
-          setConfirmation("✅ Your message has been sent successfully!");
-
-          // hide message after 5 seconds
-          setTimeout(() => setConfirmation(""), 5000);
+          setConfirmation('✅ Your message has been sent successfully!');
+          setTimeout(() => setConfirmation(''), 5000);
         },
         (error) => {
           console.error(error.text);
-          setConfirmation("❌ Failed to send message. Please try again.");
-          setTimeout(() => setConfirmation(""), 5000);
+          setConfirmation('❌ Failed to send message. Please try again.');
+          setTimeout(() => setConfirmation(''), 5000);
         }
       );
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact" aria-labelledby="contact-heading">
       <div className="contact-container">
-        {/* LEFT */}
         <div className="contact-left">
-          <h2>Contact Me</h2>
+          <h2 id="contact-heading">Let&apos;s build something useful.</h2>
           <p className="contact-desc">
-            Interested in working together or have a project in mind? Let’s
-            connect and build something meaningful.
+            I&apos;m available for web development work, feature improvements, and thoughtful digital products
+            that need clean code and a strong user experience.
           </p>
 
           <div className="contact-details">
-            <a href="mailto:sebastianjabson07@gmail.com">
-              <i className="ri-mail-line"></i>
+            <a href="mailto:sebastianjabson07@gmail.com" aria-label="Email Sebastian">
+              <i className="ri-mail-line" aria-hidden="true"></i>
               sebastianjabson07@gmail.com
             </a>
 
             <a
               href="https://github.com/sebastian709"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Visit Sebastian on GitHub"
             >
-              <i className="ri-github-line"></i>
+              <i className="ri-github-line" aria-hidden="true"></i>
               github.com/sebastian709
             </a>
 
             <a
               href="https://www.linkedin.com/in/sebastian709/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Visit Sebastian on LinkedIn"
             >
-              <i className="ri-linkedin-line"></i>
+              <i className="ri-linkedin-line" aria-hidden="true"></i>
               linkedin.com/in/sebastian709/
             </a>
 
             <a
               href="https://wa.me/639977024547"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Contact Sebastian on WhatsApp"
             >
-              <i className="ri-whatsapp-line"></i>
-              +639977024547
+              <i className="ri-whatsapp-line" aria-hidden="true"></i>
+              +63 997 702 4547
             </a>
           </div>
         </div>
 
-        {/* RIGHT */}
         <div className="contact-right">
-          <form ref={form} className="contact-form" onSubmit={handleSubmit}>
+          <form ref={form} className="contact-form" onSubmit={handleSubmit} aria-label="Contact form">
             <div className="form-group">
-              <label>Name</label>
-              <input type="text" name="name" placeholder="Your name" required />
+              <label htmlFor="name">Name</label>
+              <input id="name" type="text" name="name" placeholder="Your name" required />
             </div>
 
             <div className="form-group">
-              <label>Email</label>
+              <label htmlFor="email">Email</label>
               <input
+                id="email"
                 type="email"
                 name="email"
                 placeholder="your@email.com"
@@ -96,20 +96,21 @@ const Contact = () => {
               />
             </div>
 
-            {/* Subject / Title Field */}
             <div className="form-group">
-              <label>Subject</label>
+              <label htmlFor="title">Subject</label>
               <input
+                id="title"
                 type="text"
                 name="title"
-                placeholder="Subject / Project Title"
+                placeholder="Project title or topic"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Message</label>
+              <label htmlFor="message">Message</label>
               <textarea
+                id="message"
                 name="message"
                 rows="5"
                 placeholder="Tell me about your project..."
@@ -117,19 +118,17 @@ const Contact = () => {
               />
             </div>
 
-            {/* Hidden field for template time */}
-            <input
-              type="hidden"
-              name="time"
-              value={new Date().toLocaleString()}
-            />
+            <input type="hidden" name="time" value={new Date().toLocaleString()} />
 
             <button type="submit" className="btn primary">
               Send Message
             </button>
 
-            {/* Confirmation message */}
-            {confirmation && <p className="contact-confirmation">{confirmation}</p>}
+            {confirmation && (
+              <p className="contact-confirmation" aria-live="polite">
+                {confirmation}
+              </p>
+            )}
           </form>
         </div>
       </div>

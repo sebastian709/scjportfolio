@@ -1,28 +1,38 @@
-import { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import Hero from "./components/hero/Hero";
-import About from "./components/about/About";
-// import Skills from "./components/skills/Skills";
-import Projects from "./components/projects/Projects";
-import Contact from "./components/contact/Contact";
+import Hero from './components/hero/Hero';
+import About from './components/about/About';
+import Projects from './components/projects/Projects';
+import Contact from './components/contact/Contact';
 import ScrollTop from './components/scrollTop/ScrollTop';
 import Footer from './components/footer/Footer';
-import './App.css'
+import Seo from './components/seo/Seo';
+import ProjectDetail from './components/projectDetail/ProjectDetail';
+import './App.css';
 
-function App() {
-  return (
-    <>
-      <Navbar />
+const Home = () => (
+  <>
+    <Seo />
+    <main>
       <Hero />
       <About />
-      {/* <Skills /> */}
       <Projects />
       <Contact />
-      <Footer />
-      {/* Scroll Top Button */}
-      <ScrollTop />
-    </>
-  )
-}
+    </main>
+  </>
+);
 
-export default App
+const App = () => (
+  <BrowserRouter>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projects/:slug" element={<ProjectDetail />} />
+      <Route path="*" element={<Home />} />
+    </Routes>
+    <Footer />
+    <ScrollTop />
+  </BrowserRouter>
+);
+
+export default App;
